@@ -22,6 +22,23 @@
  * Resulting in 9 steps. So for input n = 12, the return value would be 9.
  */
 
-function steps(n: number) {}
+function steps(num: number) {
+  if(num <= 0){
+    return "Only positive numbers are allowed"
+  }
+  if (num === 1 ){
+  return 0
+  }
+  while(num !== 1){
+    if(num % 2 === 0){
+        num = num/2;
+    } else {
+      num = num *3 +1;
+    } 
+    return num
+
+  }
+   
+} 
 
 export { steps };

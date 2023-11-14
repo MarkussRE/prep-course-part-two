@@ -10,6 +10,8 @@
  * isEven(3) === false
  */
 
-function isEven(n: number) {}
+function isEven(num: number) {
+    return (num & 1) === 0 // if num binary last number is 1 it isn't gonna be equal whit 0 it will return false
+}
 
 export { isEven };

@@ -12,6 +12,13 @@
  * reverseInt(-90) === -9
  */
 
-function reverse(int: number) {}
+function reverse(int: number) {
+    const toString:string = int.toString();
+  const splitWord:string[] = toString.split('');
+  const reverseArray:string[] = splitWord.reverse();
+  const joinString:string | number = parseFloat(reverseArray.join(''));
+  return int < 0 ? - +joinString : joinString
+}
+
 
 export { reverse };

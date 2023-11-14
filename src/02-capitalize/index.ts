@@ -11,13 +11,14 @@
  * capitalize('look, it is working!') === 'Look, It Is Working!'
  */
 
-function capitalize(str: string) {
-    let newString:string[] = str.split(' ')
+function capitalize(str: string):string {
+    const newString:string[] = str.split(' ')
     return newString.map(word => {
-      let firstPart = word[0].toUpperCase()
-      let secondPart = word.slice(1)
+      const firstPart = word[0].toUpperCase()
+      const secondPart = word.substring(1)
       return (firstPart + secondPart)
-    }).join(' ')
+    }).join(' ');
+    // return str.split(' ').map(word => word[0].toUpperCase() +word.substring(1) ).join(' ');
 
 }
 

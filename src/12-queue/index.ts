@@ -13,9 +13,15 @@
  */
 
 class Queue {
-  add(n: number) {}
+  n:number[] = []
+  add(n: number) {
+    console.log(this.n)
+    return this.n.push(n) 
+  }
 
-  remove() {}
+  remove():number | undefined{
+    return this.n.shift()
+  }
 }
 
 export { Queue };

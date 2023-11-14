@@ -11,15 +11,27 @@ class HighScores {
   }
 
   get latest() {
-    return 0;
+    const scoreCopy:number[]= [...this.scores] // vajag kopijas izveidotpirms veicts izmainas By creating a copy of this.scores using the spread operator ([...this.scores]), you ensure that the original array remains unaltered when you retrieve the latest, personal best, and personal top three scores.
+    return scoreCopy.pop();
   }
 
   get personalBest() {
-    return 0;
+    let biggestNum:number = 0
+    for(let i = 0; i < this.scores.length; i++){
+    if(this.scores[i] > biggestNum){
+      biggestNum = this.scores[i]
+      }
+    }
+    return biggestNum
   }
 
   get personalTopThree() {
-    return 0;
+    const scoreCopy:number[]= [...this.scores] // vajag kopijas izveidotpirms veicts izmainas By creating a copy of this.scores using the spread operator ([...this.scores]), you ensure that the original array remains unaltered when you retrieve the latest, personal best, and personal top three scores.
+    const sortedArray = scoreCopy.sort((a, b) => b - a); 
+    
+    const top3Numbers = sortedArray.slice(0, 3);
+
+    return top3Numbers;
   }
 }
 
